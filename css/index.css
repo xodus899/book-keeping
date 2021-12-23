@@ -1,0 +1,108 @@
+body {
+  background: #ebeaea;
+  font-family: "Questrial", sans-serif;
+}
+
+input,
+button {
+  font-size: inherit;
+  padding: 0.2em;
+  margin: 0.1em 0.2em;
+  /* the following ensures they're all using the same box-model for rendering */
+  -moz-box-sizing: content-box; /* or `border-box` */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+form#bookForm input,
+form#bookForm label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  flex-basis: 100%;
+}
+
+form#bookForm button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  flex-basis: 100%;
+}
+
+.book-div {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  flex-basis: 30%;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
+    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
+    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+}
+
+#main-book-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  gap: 20px;
+}
+
+.add-book button {
+  width: 200px;
+}
+
+.book-div div {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.delete {
+  width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+  .book-div {
+    flex-basis: 90%;
+  }
+}
