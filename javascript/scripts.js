@@ -2,58 +2,58 @@ let mainDiv = document.querySelector("#main-book-div");
 
 //click add show form, toggle to hide, run checkforsubmit
 function showForm() {
-  let addBtn = document.querySelector("#book-btn");
-  let form = document.querySelector("#bookForm");
+    let addBtn = document.querySelector("#book-btn");
+    let form = document.querySelector("#bookForm");
 
-  addBtn.addEventListener("click", () => {
-    if (form.classList.contains("hide")) {
-      form.classList.toggle("show");
-    } 
-  })
-   checkForSubmit()
+    addBtn.addEventListener("click", () => {
+        if (form.classList.contains("hide")) {
+            form.classList.toggle("show");
+        }
+    })
+    checkForSubmit()
 }
 
 //check for submit -- run add book if fields are filled, no refresh
 function checkForSubmit() {
-  let button = document.querySelector("#submit");
+    let button = document.querySelector("#submit");
 
-  button.addEventListener("click", (event) => {
-    addBookToPage();
-    event.preventDefault();
-  })
+    button.addEventListener("click", (event) => {
+        addBookToPage();
+        event.preventDefault();
+    })
 }
 
 //loop through each node add to a single div, clear form after submit, 
 function addBookToPage() {
-  let allInput = document.querySelectorAll('input');
-  let div = document.createElement("div");
-  div.className = "book-div";
+    let allInput = document.querySelectorAll('input');
+    let div = document.createElement("div");
+    div.className = "book-div";
 
-  // move this block to a new function, creates the delete button and calls deleteBook
-  let button = document.createElement("button");
-  button.innerText = "Delete";
-  button.className = "delete";
-  button.addEventListener("click", deleteBook, false);
-// -----------------------------------------------------------------------------------
-  allInput.forEach((book) => {
-    let newDiv = document.createElement("div");
-    newDiv.textContent = `${book.name}: ${book.value}`;
-    div.appendChild(newDiv);
-  });
+    // move this block to a new function, creates the delete button and calls deleteBook
+    let button = document.createElement("button");
+    button.innerText = "Delete";
+    button.className = "delete";
+    button.addEventListener("click", deleteBook, false);
+    // -----------------------------------------------------------------------------------
+    allInput.forEach((book) => {
+        let newDiv = document.createElement("div");
+        newDiv.textContent = `${book.name}: ${book.value}`;
+        div.appendChild(newDiv);
+    });
 
-  resetForm();
-  mainDiv.appendChild(div);
-  div.appendChild(button);
+    resetForm();
+    mainDiv.appendChild(div);
+    div.appendChild(button);
 }
 
 
 
 //select form and reset on submit.
 function resetForm() {
-  let form = document.querySelector("#bookForm");
+    let form = document.querySelector("#bookForm");
 
-  form.classList.toggle("show");
-  form.reset();
+    form.classList.toggle("show");
+    form.reset();
 }
 
 
