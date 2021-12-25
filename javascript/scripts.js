@@ -27,21 +27,23 @@ function checkForSubmit() {
 function addBookToPage() {
     let allInput = document.querySelectorAll('input');
     let div = document.createElement("div");
+    let button = document.createElement("button");
     div.className = "book-div";
 
-    // move this block to a new function, creates the delete button and calls deleteBook
-    let button = document.createElement("button");
-    button.innerText = "Delete";
-    button.className = "delete";
-    button.addEventListener("click", deleteBook, false);
-    // -----------------------------------------------------------------------------------
     allInput.forEach((book) => {
         let newDiv = document.createElement("div");
         newDiv.textContent = `${book.name}: ${book.value}`;
         div.appendChild(newDiv);
     });
 
+    function CreateDeleteButton() {
+        button.innerText = "Delete";
+        button.className = "delete";
+        button.addEventListener("click", deleteBook, false);
+    }
+
     resetForm();
+    CreateDeleteButton()
     mainDiv.appendChild(div);
     div.appendChild(button);
 }
