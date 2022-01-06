@@ -60,8 +60,8 @@ function resetForm() {
 
 
 
-function deleteBook() {
-    this.parentNode.parentNode.removeChild(this.parentNode);
+function deleteBook(event) {
+    return event.target.closest(".book-div").remove();
 }
 
 showForm();
