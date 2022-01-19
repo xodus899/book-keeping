@@ -21,13 +21,16 @@
     <div class="form-div">
       <form tabindex="0" id="bookForm" action="index.html" class="hide">
 
-        <input name="title" type="text" placeholder="Book Title">
+        <input class="book-title" name="title" type="text" placeholder="Book Title" aria-required="true"
+          autocomplete="off">
 
-        <input name="author" type="text" placeholder="Book Author">
+        <input class="book-author" name="author" type="text" placeholder="Book Author" aria-required="true"
+          autocomplete="off">
 
-        <input name="pages" type="number" placeholder="Book Pages" min='0' max='1000000' />
+        <input name="pages" type="number" placeholder="Book Pages" min='0' max='1000000'>
 
-        <input name="read" type="text" placeholder="Have You Read?">
+        <input class="book-read" name="read" type="text" placeholder="Have You Read?" aria-required="true"
+          autocomplete="off">
         <button tabindex="0" id="submit" type="submit">Submit</button>
       </form>
     </div>
