@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang= 'en' dir='ltr'>
-  <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Book Library</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Questrial&family=Roboto&display=swap"
-      rel="stylesheet">
-    <link rel='stylesheet' href='css/index.css'>
-    <link rel='icon' href='images/favicon.png'>
-  </head>
-  <body>
-    <div class="container">
-      <div class="add-book">
-        <h1>Book Library</h1>
-        <button id="book-btn" type="submit">Add Book</button>
-      </div>
-      <div class="form-div">
-      <form id="bookForm"action="index.html" class="hide">
+<html lang='en' dir='ltr'>
 
-        <input name="title" type="text" placeholder="Book Title" required>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Book Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Questrial&family=Roboto&display=swap"
+    rel="stylesheet">
+  <link rel='stylesheet' href='css/index.css'>
+  <link rel='icon' href='images/favicon.png'>
+</head>
 
-        <input name="author" type="text" placeholder="Book Author" required>
+<body>
+  <div class="container">
+    <div class="add-book">
+      <h1>Book Library</h1>
+      <button tabindex="0" id="book-btn" type="submit">Add Book</button>
+    </div>
+    <div class="form-div">
+      <form tabindex="0" id="bookForm" action="index.html" class="hide">
 
-        <input name="pages" type="number" placeholder="Book Pages" min='0' max='1000000'>
+        <input name="title" type="text" placeholder="Book Title">
 
-        <input name="read" type="text" placeholder="Have You Read?" required>
-        <button id="submit" type="submit">Submit</button>
+        <input name="author" type="text" placeholder="Book Author">
+
+        <input name="pages" type="number" placeholder="Book Pages" min='0' max='1000000' />
+
+        <input name="read" type="text" placeholder="Have You Read?">
+        <button tabindex="0" id="submit" type="submit">Submit</button>
       </form>
     </div>
     <div>
       <div id="main-book-div"></div>
     </div>
-    </div>
+  </div>
 
 
-    <script src="javascript/scripts.js"></script>
-  </body>
+  <script src="javascript/scripts.js"></script>
+</body>
+
 </html>

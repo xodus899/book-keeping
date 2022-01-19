@@ -1,9 +1,7 @@
-let mainDiv = document.querySelector("#main-book-div");
-
 //click add show form, toggle to hide, run checkforsubmit
 function showForm() {
-    let addBtn = document.querySelector("#book-btn");
-    let form = document.querySelector("#bookForm");
+    const addBtn = document.querySelector("#book-btn");
+    const form = document.querySelector("#bookForm");
 
     addBtn.addEventListener("click", () => {
         if (form.classList.contains("hide")) {
@@ -15,7 +13,7 @@ function showForm() {
 
 //check for submit -- run add book if fields are filled, no refresh
 function checkForSubmit() {
-    let button = document.querySelector("#submit");
+    const button = document.querySelector("#submit");
 
     button.addEventListener("click", (event) => {
         addBookToPage();
@@ -25,13 +23,14 @@ function checkForSubmit() {
 
 //loop through each node add to a single div, clear form after submit, 
 function addBookToPage() {
-    let allInput = document.querySelectorAll('input');
-    let div = document.createElement("div");
-    let button = document.createElement("button");
+    const mainDiv = document.querySelector("#main-book-div");
+    const allInput = document.querySelectorAll('input');
+    const div = document.createElement("div");
+    const button = document.createElement("button");
     div.className = "book-div";
 
     allInput.forEach((book) => {
-        let newDiv = document.createElement("div");
+        const newDiv = document.createElement("div");
         newDiv.textContent = `${book.name}: ${book.value}`;
         div.appendChild(newDiv);
     });
@@ -52,13 +51,11 @@ function addBookToPage() {
 
 //select form and reset on submit.
 function resetForm() {
-    let form = document.querySelector("#bookForm");
+    const form = document.querySelector("#bookForm");
 
     form.classList.toggle("show");
     form.reset();
 }
-
-
 
 function deleteBook(event) {
     return event.target.closest(".book-div").remove();
