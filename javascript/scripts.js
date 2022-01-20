@@ -29,21 +29,14 @@ function addBookToPage() {
   const div = document.createElement("div");
   const button = document.createElement("button");
   div.className = "book-div";
-
   allInput.forEach((book) => {
     const newDiv = document.createElement("div");
+    newDiv.className = `book-${book.name}`
     newDiv.textContent = `${book.name}: ${book.value}`;
     div.appendChild(newDiv);
   });
-
-  function CreateDeleteButton() {
-    button.innerText = "Delete";
-    button.className = "delete";
-    button.addEventListener("click", deleteBook, false);
-  }
-
   resetForm();
-  CreateDeleteButton()
+  createDeleteButton(button)
   mainDiv.appendChild(div);
   div.appendChild(button);
 }
@@ -54,6 +47,12 @@ function resetForm() {
 
   form.classList.toggle("show");
   form.reset();
+}
+
+function createDeleteButton(button) {
+  button.innerText = "Delete";
+  button.className = "delete";
+  button.addEventListener("click", deleteBook, false);
 }
 
 function deleteBook(event) {
